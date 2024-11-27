@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    /* Global Styles */
+
+    body {
+        @apply bg-theme-light-pink text-theme-dark-purple relative;
+    }
+
+    /* Background Image */
+
+    .background {
+        @apply absolute top-0 left-0 w-full h-[35%];
+        background-image: url('../assets/images/background-pattern-mobile.svg');
+        background-position: center top -5vw;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @media (min-width: 1440px) {
+            background-image: url('../assets/images/background-pattern-desktop.svg');
+        }
+    }
+
+    /* Typography */
+
+    p {
+        @apply text-base text-gray-500;
+    }
+
+    h1 {
+        @apply text-5xl font-bold;
+    }
+
+    h2 {
+        @apply font-bold hover:text-[#B825F6] transition duration-300;
+    }
+}
+
+@layer components {
+    /* Main Container */
+
+    .main-container {
+        @apply w-full mx-5 bg-theme-white p-10 rounded-2xl;
+        @apply desktop:min-w-[500px] desktop:w-[35%] z-10 max-w-[100%] my-[7.5vw] self-start shadow-xl;
+    }
+
+    /* Accordion Item */
+
+    .accordion-item {
+        @apply border-gray-100 border-b mt-4;
+    }
+
+    /* Accordion Paragraph */
+
+    .accordion-paragraph {
+        @apply origin-top transition-transform duration-1000 ease-in-out overflow-hidden my-2;
+    }
+}
